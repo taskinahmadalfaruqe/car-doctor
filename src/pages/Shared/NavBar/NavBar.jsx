@@ -14,8 +14,8 @@ const NavBar = () => {
         setMood(currentMood);
         html.classList.add(currentMood)
     }, [])
+    
     const handelMood = () => {
-
         if (mood === 'light') {
             html.classList.remove('light')
             html.classList.add('dark')
@@ -27,7 +27,6 @@ const NavBar = () => {
             html.classList.add('light')
             setMood("light")
             localStorage.setItem("Mood", "light")
-
         }
     }
 
@@ -50,8 +49,7 @@ const NavBar = () => {
 
         <li> <NavLink to="/contact" className={({ isActive }) => isActive ? " text-whiteColor font-semibold p-2 px-3 text-lg bg-primaryColor uppercase" : "text-darkColor font-semibold uppercase  hover:bg-primaryColor hover:opacity-60 text-md p-2 hover:text-whiteColor dark:text-whiteColor"}>Contact</NavLink> </li>
 
-        <li> <NavLink to="/appointment" className={({ isActive }) => isActive ? "  text-whiteColor font-semibold p-2 px-3 text-lg bg-primaryColor uppercase" : "text-darkColor font-semibold uppercase  hover:bg-primaryColor hovetext-md p-2 r:opacity-60 hover:text-whiteColor dark:text-whiteColor"}>Appointment</NavLink> </li>
-
+        <li> <NavLink to="/appointment" className={({ isActive }) => isActive ? "  text-whiteColor font-semibold p-2 px-3 text-lg bg-primaryColor uppercase" : "text-darkColor font-semibold uppercase  hover:bg-primaryColor hovetext-md p-2 hover:opacity-60 hover:text-whiteColor dark:text-whiteColor"}>Appointment</NavLink> </li>
 
         {user?.email ? <>
             <li><NavLink to="/bookings" className={({ isActive }) => isActive ? " text-whiteColor font-semibold p-2 px-3 text-lg bg-primaryColor uppercase" : "text-darkColor font-semibold uppercase hover:bg-primaryColor text-md p-2 hover:opacity-60 hover:text-whiteColor dark:text-whiteColor"}>My Bookings</NavLink></li>
@@ -93,8 +91,6 @@ const NavBar = () => {
                                     </svg>
                                 </NavLink>
                         }
-
-
                     </div>
                     <div className=" hidden lg:flex">
                         <ul className="menu menu-horizontal px-1 flex gap-2 justify-center items-center">
